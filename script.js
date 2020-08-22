@@ -17,6 +17,9 @@ console.log(startOfDay);
 //local storage nightmare goes here ????
 //store input text to local storage, make retrievable upon refresh 
 
+localStorage.getItem(); 
+
+localStorage.setItem(); 
 
 
 //calender times starting at 9am, +1, appended to appropriate span class 
@@ -98,14 +101,20 @@ function timeView() {
     //conditional to assign class outcome dependent on time 
     //9am = start of day + 9hours, 9 pointing at data-hour in html
 
+    //had to declare current time as defined to hours for present class to display
+    currentTime = currentTime.startOf('hour');
+
     cal9am = moment().startOf('date').add(9, 'hours');
     console.log(cal9am);
     // past/present/future class appending to .time-color, depending on t.o.d. 
 
+    //if current time is after 9am, this will be in past
      if (currentTime.isAfter(cal9am)) {
          $(".time-color9").addClass("past");
+    //if current time is the same as 9am hour, then present 
      } else if (currentTime.isSame(cal9am)) {
          $(".time-color9").addClass("present");
+    //if current time is before 9am, this will show future 
      } else if (currentTime.isBefore(cal9am)) {
          $(".time-color9").addClass("future");
      };
@@ -197,11 +206,6 @@ function timeView() {
     } else if (currentTime.isBefore(cal5pm)) {
         $(".time-color5").addClass("future");
     };
-
-
-
-    
-
 
 }
 
