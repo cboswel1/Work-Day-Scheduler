@@ -1,5 +1,5 @@
 // Create a moment.js for current date at planner head - assign to currentday id 
-moment(Date); 
+// moment(); 
 $("#currentDay").text(moment().format('dddd' + ', ' + 'MMMM Do YYYY'));
 
 console.log(moment().format());
@@ -10,11 +10,16 @@ console.log(moment().format());
 // 9am will be initial variable, each proceeding will be manipulated with .add to add +1 hour
 
 //variable for start of day (12am) + 9 hours 
-var startOfDay = moment().startOf('day').add(9, 'hours'); 
+var startOfDay = moment().startOf('date').add(9, 'hours'); 
 
 console.log(startOfDay); 
 
+//local storage nightmare goes here ????
+//store input text to local storage, make retrievable upon refresh 
 
+
+
+//calender times starting at 9am, +1, appended to appropriate span class 
 //9am 
 var cal9am = startOfDay
 
@@ -80,3 +85,124 @@ var cal5pm = startOfDay.add(1, 'h');
 cal5pm = startOfDay.format('hh:mm a');
 
 $(".5pm").text(cal5pm);
+
+//function to add classes per current time. 
+
+//current time
+currentTime = moment(); 
+    console.log(currentTime);
+
+//function will take each time variable and compare to current time to assign past, present, future
+function timeView() {
+
+    //conditional to assign class outcome dependent on time 
+    //9am = start of day + 9hours, 9 pointing at data-hour in html
+
+    cal9am = moment().startOf('date').add(9, 'hours');
+    console.log(cal9am);
+    // past/present/future class appending to .time-color, depending on t.o.d. 
+
+     if (currentTime.isAfter(cal9am)) {
+         $(".time-color9").addClass("past");
+     } else if (currentTime.isSame(cal9am)) {
+         $(".time-color9").addClass("present");
+     } else if (currentTime.isBefore(cal9am)) {
+         $(".time-color9").addClass("future");
+     };
+
+    //+10 hours to start of day
+    cal10am = moment().startOf('date').add(10, 'hours');
+
+     if (currentTime.isAfter(cal10am)) {
+        $(".time-color10").addClass("past");
+    } else if (currentTime.isSame(cal10am)) {
+        $(".time-color10").addClass("present");
+    } else if (currentTime.isBefore(cal10am)) {
+        $(".time-color10").addClass("future");
+    };
+
+    //+11 hours to start of day
+    cal11am = moment().startOf('date').add(11, 'hours');
+
+    if (currentTime.isAfter(cal11am)) {
+        $(".time-color11").addClass("past");
+    } else if (currentTime.isSame(cal11am)) {
+        $(".time-color11").addClass("present");
+    } else if (currentTime.isBefore(cal11am)) {
+        $(".time-color11").addClass("future");
+    };
+
+    //+12 hours to start of day 
+    cal12pm = moment().startOf('date').add(12, 'hours');
+
+    if (currentTime.isAfter(cal12pm)) {
+        $(".time-color12").addClass("past");
+    } else if (currentTime.isSame(cal12pm)) {
+        $(".time-color12").addClass("present");
+    } else if (currentTime.isBefore(cal12pm)) {
+        $(".time-color12").addClass("future");
+    };
+
+    //+13 hours to start of day
+    cal1pm = moment().startOf('date').add(13, 'hours');
+
+    if (currentTime.isAfter(cal1pm)) {
+        $(".time-color1").addClass("past");
+    } else if (currentTime.isSame(cal1pm)) {
+        $(".time-color1").addClass("present");
+    } else if (currentTime.isBefore(cal1pm)) {
+        $(".time-color1").addClass("future");
+    };
+
+    //+14 hours to start of day
+    cal2pm = moment().startOf('date').add(14, 'hours');
+
+    if (currentTime.isAfter(cal2pm)) {
+        $(".time-color2").addClass("past");
+    } else if (currentTime.isSame(cal2pm)) {
+        $(".time-color2").addClass("present");
+    } else if (currentTime.isBefore(cal2pm)) {
+        $(".time-color2").addClass("future");
+    };
+
+    //+15 hours to start of day 
+    cal3pm = moment().startOf('date').add(15, 'hours');
+
+    if (currentTime.isAfter(cal3pm)) {
+        $(".time-color3").addClass("past");
+    } else if (currentTime.isSame(cal3pm)) {
+        $(".time-color3").addClass("present");
+    } else if (currentTime.isBefore(cal3pm)) {
+        $(".time-color3").addClass("future");
+    };
+
+    //+16 hours to start of day 
+    cal4pm = moment().startOf('date').add(16, 'hours');
+
+    if (currentTime.isAfter(cal4pm)) {
+        $(".time-color4").addClass("past");
+    } else if (currentTime.isSame(cal4pm)) {
+        $(".time-color4").addClass("present");
+    } else if (currentTime.isBefore(cal4pm)) {
+        $(".time-color4").addClass("future");
+    };
+    
+    //5pm = start of day + 17 hours on 24 hour (military) clock 
+    cal5pm = moment().startOf('date').add(17, 'hours'); 
+
+    if (currentTime.isAfter(cal5pm)) {
+        $(".time-color5").addClass("past");
+    } else if (currentTime.isSame(cal5pm)) {
+        $(".time-color5").addClass("present");
+    } else if (currentTime.isBefore(cal5pm)) {
+        $(".time-color5").addClass("future");
+    };
+
+
+
+    
+
+
+}
+
+timeView();
