@@ -6,7 +6,7 @@ The Work Day Scheduler is a browser application that allows the user to store an
 
 ## Preview 
 
-![Work Day Scheduler Preview](https://github.com/cboswel1/code-quiz/blob/master/Assets/images/Screen%20Shot%202020-08-15%20at%205.36.59%20PM.png?raw=true)
+![Work Day Scheduler Preview](https://github.com/cboswel1/Work-Day-Scheduler/blob/master/Assets/Screen%20Shot%202020-08-22%20at%208.20.06%20PM.png?raw=true)
 
 ## How Does It Work
 
