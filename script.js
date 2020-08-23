@@ -2,7 +2,6 @@
 // moment(); 
 $("#currentDay").text(moment().format('dddd' + ', ' + 'MMMM Do YYYY'));
 
-console.log(moment().format());
 
 // Our Work Day Schedule only accounts for the hours between 9am - 5pm. 
 // We need to have a 24 hours running clock, but only utilizing the hours between 9am-5pm. 
@@ -12,7 +11,6 @@ console.log(moment().format());
 //variable for start of day (12am) + 9 hours 
 var startOfDay = moment().startOf('date').add(9, 'hours'); 
 
-console.log(startOfDay); 
 
 //local storage nightmare goes here ????
 //store input text to local storage, make retrievable upon refresh 
@@ -20,10 +18,9 @@ console.log(startOfDay);
 
 // localStorage.getItem(); 
 
- 
+
 for (var i = 0; i < 9; i++) {
     var getKey = localStorage.getItem("" + i + "");
-    console.log(getKey);
     var thanksDiego = $(".form-control")[i]; 
     $(thanksDiego).val(getKey);
 }
@@ -31,12 +28,8 @@ for (var i = 0; i < 9; i++) {
 
 // Diego ftw!
 $('.saveBtn').click(function(event) {
-    console.log($(this.parentElement.parentElement.children[1].attributes[1]));
     var calForm = $(this.parentElement.parentElement.children[1]).val();
-    console.log("working");
     var calName = $(this.parentElement.parentElement.children[1].attributes[1]);
-    console.log(calName.val());
-    console.log(calForm);
     localStorage.setItem("" + calName.val() + "", calForm);
 });
 
@@ -46,7 +39,6 @@ $('.saveBtn').click(function(event) {
 var cal9am = startOfDay
 
 cal9am = startOfDay.format('hh:mm a');
-console.log(cal9am);
 
 $(".9am").text(cal9am);
 
@@ -54,7 +46,6 @@ $(".9am").text(cal9am);
 var cal10am = startOfDay.add(1, 'h'); 
 
 cal10am = startOfDay.format('hh:mm a');
-console.log(cal10am);
 
 $(".10am").text(cal10am);
 
@@ -62,7 +53,6 @@ $(".10am").text(cal10am);
 var cal11am = startOfDay.add(1, 'h'); 
 
 cal11am = startOfDay.format('hh:mm a');
-console.log(cal11am);
 
 $(".11am").text(cal11am);
 
@@ -112,7 +102,6 @@ $(".5pm").text(cal5pm);
 
 //current time to use within function 
 currentTime = moment(); 
-    console.log(currentTime);
 
 //function will take each time variable and compare to current time to assign past, present, future
 function timeView() {
@@ -124,7 +113,7 @@ function timeView() {
     currentTime = currentTime.startOf('hour');
 
     cal9am = moment().startOf('date').add(9, 'hours');
-    console.log(cal9am);
+    
     // past/present/future class appending to .time-color, depending on t.o.d. 
 
     //if current time is after 9am, this will be in past
