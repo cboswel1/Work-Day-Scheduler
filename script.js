@@ -17,9 +17,28 @@ console.log(startOfDay);
 //local storage nightmare goes here ????
 //store input text to local storage, make retrievable upon refresh 
 
-localStorage.getItem(); 
 
-localStorage.setItem(); 
+// localStorage.getItem(); 
+
+ 
+for (var i = 0; i < 9; i++) {
+    var getKey = localStorage.getItem("" + i + "");
+    console.log(getKey);
+    var thanksDiego = $(".form-control")[i]; 
+    $(thanksDiego).val(getKey);
+}
+
+
+// Diego ftw!
+$('.saveBtn').click(function(event) {
+    console.log($(this.parentElement.parentElement.children[1].attributes[1]));
+    var calForm = $(this.parentElement.parentElement.children[1]).val();
+    console.log("working");
+    var calName = $(this.parentElement.parentElement.children[1].attributes[1]);
+    console.log(calName.val());
+    console.log(calForm);
+    localStorage.setItem("" + calName.val() + "", calForm);
+});
 
 
 //calender times starting at 9am, +1, appended to appropriate span class 
@@ -91,7 +110,7 @@ $(".5pm").text(cal5pm);
 
 //function to add classes per current time. 
 
-//current time
+//current time to use within function 
 currentTime = moment(); 
     console.log(currentTime);
 
