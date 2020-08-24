@@ -12,13 +12,14 @@ $("#currentDay").text(moment().format('dddd' + ', ' + 'MMMM Do YYYY'));
 var startOfDay = moment().startOf('date').add(9, 'hours'); 
 
 
-//local storage nightmare goes here ????
+//local storage
+
 //store input text to local storage, make retrievable upon refresh 
 
 
 // localStorage.getItem(); 
 
-
+//retrieving from local storage
 for (var i = 0; i < 9; i++) {
     var getKey = localStorage.getItem("" + i + "");
     var thanksDiego = $(".form-control")[i]; 
@@ -26,7 +27,7 @@ for (var i = 0; i < 9; i++) {
 }
 
 
-// Diego ftw!
+// worked with another student to dial in set Item 
 $('.saveBtn').click(function(event) {
     var calForm = $(this.parentElement.parentElement.children[1]).val();
     var calName = $(this.parentElement.parentElement.children[1].attributes[1]);
@@ -107,7 +108,7 @@ currentTime = moment();
 function timeView() {
 
     //conditional to assign class outcome dependent on time 
-    //9am = start of day + 9hours, 9 pointing at data-hour in html
+    //9am = start of day + 9hours, 9 pointing at class name in html
 
     //had to declare current time as defined to hours for present class to display
     currentTime = currentTime.startOf('hour');
