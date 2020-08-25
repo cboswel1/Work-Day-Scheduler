@@ -13,7 +13,7 @@ The Work Day Scheduler is a browser application that allows the user to store an
 Click here for a [live demo.](https://youtu.be/G8-4DIEOHcA)
 
 ## Live Site 
-Link to live site [Code-Quiz](https://cboswel1.github.io/Work-Day-Scheduler/) 
+Link to live site [Work-Day-Scheduler](https://cboswel1.github.io/Work-Day-Scheduler/) 
 
 ## Authored By 
 This application was authored by [Christian Boswell](https://github.com/cboswel1)  
