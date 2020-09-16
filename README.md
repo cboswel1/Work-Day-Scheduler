@@ -2,7 +2,10 @@
 
 The Work Day Scheduler is a browser application that allows the user to store and save personal events to a particular time and save them to their local machine. The application displays, in real time; past, current, and future times with distinct color hues. 
 
+## Built With 
 
+[JQuery](https://api.jquery.com/) 
+[moment.js] (https://momentjs.com/)
 
 ## Preview 
 
