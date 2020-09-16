@@ -6,7 +6,7 @@ The Work Day Scheduler is a browser application that allows the user to store an
 
 [JQuery](https://api.jquery.com/) 
 
-[moment] (https://momentjs.com/)
+[moment.js](https://momentjs.com/)
 
 ## Preview 
 
